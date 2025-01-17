@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur d'idées de contenu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur d'idées de contenu</h1>
+        
+        <div class="search-box">
+            <div class="input-wrapper">
+                <input type="text" id="keyword" placeholder="Entrez votre mot-clé">
+                <select id="language">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+            <button onclick="generateIdeas()" class="generate-btn">
+                <i class="fas fa-magic"></i> Générer des idées
+            </button>
+        </div>
+
+        <div class="results" id="results">
+            <div class="section">
+                <h2><i class="fas fa-blog"></i> Articles de blog</h2>
+                <ul id="blogIdeas"></ul>
+                <div class="actions">
+                    <button onclick="copyToClipboard('blogIdeas')" class="action-btn">
+                        <i class="fas fa-copy"></i> Copier
+                    </button>
+                    <button onclick="regenerateIdeas('blog')" class="action-btn">
+                        <i class="fas fa-redo"></i> Régénérer
+                    </button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-video"></i> Scripts vidéo</h2>
+                <ul id="videoIdeas"></ul>
+                <div class="actions">
+                    <button onclick="copyToClipboard('videoIdeas')" class="action-btn">
+                        <i class="fas fa-copy"></i> Copier
+                    </button>
+                    <button onclick="regenerateIdeas('video')" class="action-btn">
+                        <i class="fas fa-redo"></i> Régénérer
+                    </button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-search"></i> Titres SEO</h2>
+                <ul id="seoTitles"></ul>
+                <div class="actions">
+                    <button onclick="copyToClipboard('seoTitles')" class="action-btn">
+                        <i class="fas fa-copy"></i> Copier
+                    </button>
+                    <button onclick="regenerateIdeas('seo')" class="action-btn">
+                        <i class="fas fa-redo"></i> Régénérer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast" class="toast"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
